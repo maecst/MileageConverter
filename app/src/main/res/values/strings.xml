@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">MileageConverter</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Distance Converter</string>
     <string name="action_settings">Settings</string>
+    <string name="toKM">Convert to KM</string>
+    <string name="toMiles">Convert to Miles</string>
 </resources>
