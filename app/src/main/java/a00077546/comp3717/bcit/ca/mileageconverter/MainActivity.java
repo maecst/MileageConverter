@@ -46,26 +46,25 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView outputText = (TextView) findViewById(R.id.outputText);
         final EditText edit = (EditText)findViewById(R.id.num2convert);
-
-        final String inputText = edit.getText().toString();
-        final double input = Double.parseDouble(inputText);
+        final String inputStr = edit.getText().toString();
         final double output;
 
-
-        if (TextUtils.isEmpty(inputText)) {
+        if (TextUtils.isEmpty(inputStr)) {
+            outputText.setText("");
             Toast.makeText(this, "Nothing to convert.  Try again.", Toast.LENGTH_LONG).show();
-            outputText.setText("Nothing to convert.  Try again.");
         } else {
+
+            final double input = Double.parseDouble(inputStr);
             switch (view.getId()) {
                 case R.id.btn_toKM:
-                    //Toast.makeText(this, "Convert toKM", 1000).show();
+                    //Toast.makeText(this, "Convert to KM", Toast.LENGTH_LONG).show();
                     output = convertToKM(input);
-                    outputText.setText(inputText + " Miles = " + output + " KM");
+                    outputText.setText(inputStr + " Miles = " + output + " KM");
                     break;
                 case R.id.btn_toMiles:
-                    //Toast.makeText(this, "Convert to Miles", 1000).show();
+                    //Toast.makeText(this, "Convert to Miles", Toast.LENGTH_LONG).show();
                     output = convertToMiles(input);
-                    outputText.setText(inputText + " KM = " + output + " Miles");
+                    outputText.setText(inputStr + " KM = " + output + " Miles");
                     break;
             }
         }
